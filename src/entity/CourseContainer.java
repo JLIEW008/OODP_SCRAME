@@ -16,7 +16,7 @@ public class CourseContainer extends Container implements Findable, Removable {
 	}
 
 	@Override
-	public void removeByID(String id) {
+	public void removeByID(String id) throws Exception{
 		Course course = findByID(id);
 		if(course != null) {
 			this.courses.remove(course);
@@ -25,7 +25,7 @@ public class CourseContainer extends Container implements Findable, Removable {
 	}
 
 	@Override
-	public void add(Object o) {
+	public void add(Object o) throws Exception{
 		Course course = (Course)o;
 		if(findByID(course.getID()) == null) {
 			this.courses.add(course);

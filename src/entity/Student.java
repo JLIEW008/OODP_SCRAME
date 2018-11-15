@@ -51,7 +51,7 @@ public class Student implements Serializable{
      * Gets the ID of the student
      * @return this student's ID
      */
-    public String getStudentID() {
+    public String getID() {
         return this.studentID;
     }
 

@@ -1,5 +1,5 @@
 package entity;
 
 public interface Removable {
-	public void removeByID(String id);
+	public void removeByID(String id) throws Exception;
 }
