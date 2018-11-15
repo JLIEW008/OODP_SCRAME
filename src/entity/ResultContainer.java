@@ -47,7 +47,7 @@ public class ResultContainer extends TypeFindableContainer{
 	}
 
 	@Override
-	public void add(Object o) {
+	public void add(Object o) throws Exception{
 		Result result = (Result)o;
 		if(findByID(result.getID()) == null) {
 			this.results.add(result);
@@ -56,7 +56,7 @@ public class ResultContainer extends TypeFindableContainer{
 	}
 
 	@Override
-	public void removeByID(String id) {
+	public void removeByID(String id) throws Exception{
 		Result result = findByID(id);
 		if(result != null) {
 			this.results.remove(result);
@@ -70,5 +70,6 @@ public class ResultContainer extends TypeFindableContainer{
 		for(int index = 0; index < ids.size(); index++) {
 			temp += (index < ids.size()) ? ids.get(index) + "-" : ids.get(index); 
 		}
+		return temp;
 	}
 }

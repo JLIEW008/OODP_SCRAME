@@ -1,7 +1,11 @@
 package entity;
 
 public class AddToContainer {
-	public add(Container container, object o) {
-		container.add(o);
+	public void add(Container container, Object o) {
+		try {
+			container.add(o);
+		}catch(Exception e) {
+			System.out.println(e); //Should not happen, for debugging purposes
+		}
 	}
 }

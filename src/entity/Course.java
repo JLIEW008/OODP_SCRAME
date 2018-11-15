@@ -121,7 +121,7 @@ public class Course implements Serializable,Printable{
      * Gets the ID of this Course
      * @return This Course's ID
      */
-    public String getCourseID() {
+    public String getID() {
         return this.courseID;
     }
 

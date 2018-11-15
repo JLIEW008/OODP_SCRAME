@@ -17,12 +17,7 @@ public class Result extends Score{
     /**
      * The ID of the Course that this Result is for.
      */
-    private final String COURSE_ID;
-
-    /**
-     * The ID of the Student that this Result is for.
-     */
-    private final String STUDENT_ID;
+    private final String RESULT_ID;
 
     /**
      * Creates a new result for a given Student in a given Course based on their IDs.
@@ -32,24 +27,15 @@ public class Result extends Score{
      */
 	public Result(String courseID, String studentID, String name){
 		super(name);
-    	this.COURSE_ID = courseID;
-    	this.STUDENT_ID = studentID;
+    	this.RESULT_ID = courseID + "-" + studentID;
 	}
 
     /**
      * Gets the Course ID of the Course this Result is for.
      * @return the ID of the <code>Course</code>
      */
-	public String getCourseID() {
-    	return this.COURSE_ID;
-    }
-
-    /**
-     * Gets the Student ID the Student this Result is for.
-     * @return the ID of the <code>Student</code>
-     */
-    public String getStudentID() {
-    	return this.STUDENT_ID;
+	public String getID() {
+    	return this.RESULT_ID;
     }
 
     /**

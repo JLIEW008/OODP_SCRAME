@@ -1,5 +1,5 @@
 package entity;
 
 public interface Addable {
-	public void add(Object o);
+	public void add(Object o) throws Exception;
 }
