@@ -11,35 +11,32 @@ import java.util.ArrayList;
  */
 
 
-public abstract class Lesson implements Serializable,Printable {
+public class Lesson implements Serializable,Printable {
 
-    /**
-     * An ArrayList that stores the ID's of the Students registered for this Lesson.
-     */
     private ArrayList<String> studentIDs;
 
-    /**
-     * The name of the professor teaching this Lesson.
-     */
-    private String profName;
+    private String profName, lessonID, lessonType; 
 
-    /**
-     * The remaining number of Students who can register for this Lesson.
-     */
     private int vacancy;
 
- 
-    /**
-     * Creates a new Lesson object.
-     * The object starts with no Students registered for this Lesson.
-     */
+    private enum lessonType {TUTORIAL,LAB,LECTURE};
     
 	private Lesson() {
 		this.studentIDs= new ArrayList<String>();
 	}
 	
-	public buildLesson(String lessonID, int vacancy, String ) {
-		this.studentIDs 
+	
+
+    /**
+     * Creates a new Lesson object.
+     */
+	public Lesson buildLesson(String lessonID, String profName, int vacancy, String lessonType) {
+		Lesson lesson = new Lesson(); 
+		lesson.vacancy = vacancy; 
+		lesson.lessonID = lessonID; 
+		lesson.lessonType = lessonType; 
+		lesson.profName = profName; 
+		return lesson; 
 	}
 
 	
@@ -87,7 +84,9 @@ public abstract class Lesson implements Serializable,Printable {
      * Gets the lessonID of this Lesson
      * @return a <code>String</code> representing this Lesson's ID.
      */
-    abstract String getLessonID();
+    public String getLessonID() {
+    	return this.lessonID;
+    }
 
     /**
      * Gets the name of the Professor teaching this Lesson.
