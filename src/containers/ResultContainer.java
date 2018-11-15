@@ -1,6 +1,8 @@
-package entity;
+package containers;
 
 import java.util.List;
+
+import entity.Result;
 
 import java.util.ArrayList;
 

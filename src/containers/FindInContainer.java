@@ -1,4 +1,4 @@
-package entity;
+package containers;
 
 public class FindInContainer {
 	public Object findObject(Container container, String id){

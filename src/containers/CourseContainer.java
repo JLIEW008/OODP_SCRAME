@@ -1,7 +1,9 @@
-package entity;
+package containers;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import entity.Course;
 
 public class CourseContainer extends Container implements Findable, Removable {
 	private List<Course> courses = new ArrayList<Course>();

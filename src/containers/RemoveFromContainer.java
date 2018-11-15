@@ -1,4 +1,4 @@
-package entity;
+package containers;
 
 public class RemoveFromContainer {
 	public void removeObject(Container container, String id){

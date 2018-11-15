@@ -2,6 +2,8 @@ package entity;
 import java.io.Serializable;
 import java.util.ArrayList;
 
+import containers.Printable;
+
 /**
  * <code>Lessons</code> is a serializable entity class representing the lessons each course has.
  * Lessons include labs, lectures and tutorials.

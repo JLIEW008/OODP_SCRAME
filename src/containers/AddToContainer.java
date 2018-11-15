@@ -1,4 +1,4 @@
-package entity;
+package containers;
 
 public class AddToContainer {
 	public void add(Container container, Object o) {
