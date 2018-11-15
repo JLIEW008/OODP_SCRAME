@@ -12,7 +12,7 @@ import students.Student;
  * @version 1.0
  * @since   2018-11-05
  */
-public class Course implements Serializable,Printable {
+public class Course implements Serializable,Printable{
 
     /**
      * The ID of this course, which is unique to each course.
@@ -54,7 +54,7 @@ public class Course implements Serializable,Printable {
     /**
      * The <code>ArrayList</code> containing Lesson objects which are Lab/tutorial/Lecture objects belonging to this course.
      */
-    private ArrayList<Lessons> lessons;
+    private ArrayList<Lesson> lessons;
 
     /**
      *  The <code>ArrayList</code> containing the names of the professors who teach this course.
@@ -68,25 +68,25 @@ public class Course implements Serializable,Printable {
      * The id should be unique.
      * @param ID This Course's ID.
      */
-    public Course(String ID){
+    private Course(String ID){
     	this.courseID = ID;
     	this.maxVacancy = this.vacancy = 0;
     	this.courseName = "Unknown Course";
         this.haveSubComponents = false;
         this.exWeightage = 100;
         this.cwWeightage = this.asWeightage = this.cpWeightage = 0;
-        this.lessons = new ArrayList<Lessons>();
+        this.lessons = new ArrayList<Lesson>();
         this.registeredStudentIDs = new ArrayList<String>();
         this.profNames = new ArrayList<String>();
     }
-
+    
     /**
      * Creates a new Course with the given id and given maximum vacancy.
      * The id should be unique.
      * @param ID This Course's ID
      * @param vacancy The maximum vacancy for this Course.
      */
-    Course(String ID, int vacancy) {
+     private Course(String ID, int vacancy) {
 
         this.courseID = ID;
         this.profNames = new ArrayList<String>();
@@ -96,10 +96,26 @@ public class Course implements Serializable,Printable {
         this.exWeightage = 100;
         this.cwWeightage = this.asWeightage = 0;
         this.cpWeightage = 100;
-        this.lessons = new ArrayList<Lessons>();
+        this.lessons = new ArrayList<Lesson>();
         this.registeredStudentIDs = new ArrayList<String>();
         this.profNames = new ArrayList<String>();
     }
+    
+    public Course buildCourse(String ID, ArrayList<String> profNames, int vacancy) {
+    	Course course = new Course(ID); 
+    	course.profNames = profNames; 
+    	course.vacancy = vacancy; 
+    	course.maxVacancy = vacancy; 
+    	return course;
+    }
+    
+    
+    
+    
+    
+    
+    
+    
 
     /**
      * Gets the ID of this Course
@@ -192,7 +208,7 @@ public class Course implements Serializable,Printable {
      * Gets the ArrayList containing Lesson objects (Tutorials/Labs/Lectures) belonging to this Course.
      * @return <code>ArrayList</code> of Lesson objects
      */
-    public ArrayList<Lessons> getLessons(){
+    public ArrayList<Lesson> getLessons(){
     	return this.lessons;
     }
 
@@ -200,7 +216,7 @@ public class Course implements Serializable,Printable {
      * Adds a Lesson object (Tutorial/Lab/Lecture) to the ArrayList of Lesson objects of this Course.
      * @param lesson Lesson object belonging to this Course.
      */
-    public void addLesson(Lessons lesson) {
+    public void addLesson(Lesson lesson) {
     	this.lessons.add(lesson);
     }
 

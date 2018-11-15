@@ -9,31 +9,45 @@ import java.util.ArrayList;
  * @version 1.0
  * @since 2018-11-07
  */
-public abstract class Lessons implements Serializable,Printable {
+
+
+public abstract class Lesson implements Serializable,Printable {
 
     /**
      * An ArrayList that stores the ID's of the Students registered for this Lesson.
      */
-    protected ArrayList<String> studentIDs;
+    private ArrayList<String> studentIDs;
 
     /**
      * The name of the professor teaching this Lesson.
      */
-    protected String profName;
+    private String profName;
 
     /**
      * The remaining number of Students who can register for this Lesson.
      */
-    protected int vacancy;
+    private int vacancy;
 
+ 
     /**
      * Creates a new Lesson object.
      * The object starts with no Students registered for this Lesson.
      */
-	public Lessons() {
+    
+	private Lesson() {
 		this.studentIDs= new ArrayList<String>();
 	}
+	
+	public buildLesson(String lessonID, int vacancy, String ) {
+		this.studentIDs 
+	}
 
+	
+	
+	
+	
+	
+	
     /**
      * Sets the name of the Professor teaching this Lesson.
      * @param name new name of Professor.
